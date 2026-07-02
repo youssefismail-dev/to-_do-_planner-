@@ -4,7 +4,7 @@
 
 // ── CONSTANTS ──────────────────────────────────────
 
-const DAY_NAMES    = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
+const DAY_NAMES    = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday'];
 const LIST_IDS     = ['custom', 'grocery', 'ideas'];
 const LIST_NAMES   = { custom: 'Custom List', grocery: 'Grocery List', ideas: 'Ideas' };
 const COLORS       = ['none', 'green', 'yellow', 'blue', 'red', 'purple'];
@@ -88,7 +88,7 @@ function getWeekDates() {
   const dow = today.getDay();            // 0 = Sunday
   const sun = new Date(today);
   sun.setDate(today.getDate() - dow + state.weekOffset * 7);
-  return Array.from({ length: 5 }, (_, i) => {
+  return Array.from({ length: 7 }, (_, i) => {
     const d = new Date(sun);
     d.setDate(sun.getDate() + i);
     return d;
